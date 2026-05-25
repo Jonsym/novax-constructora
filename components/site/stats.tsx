@@ -62,29 +62,35 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <section className="relative overflow-hidden bg-foreground py-24 text-background md:py-32">
+    <section
+      aria-label="Indicadores de operación"
+      className="relative overflow-hidden bg-foreground py-20 text-background md:py-28 lg:py-32"
+    >
       <div className="grid-bg-soft pointer-events-none absolute inset-0 opacity-20" />
       <div className="absolute inset-x-0 top-0 h-px bg-background/10" />
 
       <div className="container-page relative">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-[10px] tracking-[0.22em] uppercase text-background/60">
-              ⎯⎯ Indicadores
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-end lg:gap-12">
+          <div className="lg:col-span-8">
+            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--gold)]">
+              Indicadores · cierre 2025
             </p>
-            <h2 className="mt-3 max-w-xl font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-[1.1] tracking-[-0.02em]">
-              Cifras de operación,
-              <br />
-              actualizadas al cierre 2025.
+            <h2 className="mt-4 max-w-2xl font-heading text-[clamp(1.85rem,3.4vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.02em]">
+              Cifras de operación auditadas,{" "}
+              <span className="font-serif text-[1.06em] font-normal italic tracking-normal text-background">
+                reportadas a cliente.
+              </span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-background/70">
-            Lo que medimos es lo que mejoramos. Estos indicadores se reportan
-            trimestralmente a nuestros clientes corporativos.
-          </p>
+          <div className="lg:col-span-4">
+            <p className="max-w-sm text-sm leading-relaxed text-background/65">
+              Lo que medimos es lo que mejoramos. Estos indicadores se reportan
+              trimestralmente a clientes corporativos.
+            </p>
+          </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden border border-background/10 bg-background/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden border border-background/10 bg-background/10 md:mt-14 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -98,8 +104,8 @@ export function Stats() {
               }}
               className="flex flex-col gap-3 bg-foreground p-7 md:p-8"
             >
-              <span className="text-[10px] tracking-[0.22em] uppercase text-[color:var(--gold)]">
-                0{i + 1}
+              <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--gold)]">
+                {String(i + 1).padStart(2, "0")}
               </span>
               <p className="font-heading text-[clamp(2.5rem,4.5vw,4rem)] font-semibold leading-none tracking-[-0.04em]">
                 <Counter to={s.n} suffix={s.suffix} />

@@ -41,15 +41,19 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="proceso" className="relative bg-background py-24 md:py-32">
+    <section
+      id="proceso"
+      className="relative bg-background py-20 md:py-28 lg:py-32"
+    >
       <div className="container-page">
         <Reveal className="grid grid-cols-1 items-end gap-8 border-b border-border pb-10 lg:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
-            <p className="eyebrow">Proceso</p>
-            <h2 className="mt-4 font-heading text-[clamp(2rem,3.6vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.025em] text-foreground">
-              Seis etapas. Cero
-              <br />
-              <span className="text-muted-foreground">improvisaciones.</span>
+            <p className="eyebrow text-[color:var(--gold)]">Proceso</p>
+            <h2 className="mt-5 font-heading text-[clamp(2.25rem,4.6vw,3.75rem)] font-semibold leading-[1.04] tracking-[-0.025em] text-foreground">
+              Seis etapas.{" "}
+              <span className="font-serif text-[1.08em] font-normal italic tracking-normal">
+                Cero improvisaciones.
+              </span>
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -58,8 +62,8 @@ export function Process() {
           </p>
         </Reveal>
 
-        <Stagger className="mt-12 flex flex-col">
-          {steps.map((s, i) => (
+        <Stagger className="mt-10 flex flex-col md:mt-12">
+          {steps.map((s) => (
             <StaggerItem key={s.n}>
               <div className="group relative grid grid-cols-[auto_1fr] gap-6 border-b border-border py-8 pl-5 transition-colors hover:bg-muted/40 sm:pl-7 md:grid-cols-[120px_1fr_auto] md:gap-10 md:py-10 md:pl-9">
                 <div className="flex flex-col items-start gap-2">
@@ -102,7 +106,7 @@ export function Process() {
         </Stagger>
 
         <Reveal className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 sm:flex-row sm:items-center">
-          <p className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground">
+          <p className="text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
             Tiempo promedio del primer contacto a la entrega: 8 a 14 meses
           </p>
           <span className="font-heading text-sm font-medium text-foreground">

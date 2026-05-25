@@ -42,17 +42,17 @@ export function ContactForm({
         className,
       )}
     >
-      <div className="mb-5 flex items-center justify-between">
+      <div className="mb-6 flex items-start justify-between gap-4">
         <div>
-          <p className="text-[10px] tracking-[0.22em] uppercase text-[color:var(--gold)]">
-            Cotización
+          <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--gold)]">
+            Cotización sin costo
           </p>
-          <h3 className="mt-1 font-heading text-lg font-semibold text-foreground">
+          <h3 className="mt-2 font-heading text-xl font-semibold tracking-tight text-foreground">
             Cuéntanos sobre tu proyecto
           </h3>
         </div>
-        <span className="text-[10px] tracking-[0.18em] text-muted-foreground">
-          24 H · RESPUESTA
+        <span className="shrink-0 border border-border bg-muted/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+          24 h
         </span>
       </div>
 

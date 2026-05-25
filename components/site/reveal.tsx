@@ -6,14 +6,12 @@ import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
 type RevealProps = HTMLMotionProps<"div"> & {
   delay?: number;
   y?: number;
-  as?: "div" | "section" | "article" | "header" | "footer";
 };
 
 export function Reveal({
   children,
   delay = 0,
   y = 20,
-  as: _as = "div",
   ...props
 }: RevealProps) {
   const reduce = useReducedMotion();

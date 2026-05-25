@@ -47,17 +47,24 @@ const columns = [
   {
     title: "Servicios",
     links: [
-      "Residencial",
-      "Comercial",
-      "Industrial",
-      "Remodelación",
-      "Supervisión",
-      "Project Management",
+      { label: "Residencial", href: "#servicios" },
+      { label: "Comercial", href: "#servicios" },
+      { label: "Industrial", href: "#servicios" },
+      { label: "Remodelación", href: "#servicios" },
+      { label: "Supervisión", href: "#servicios" },
+      { label: "Project Management", href: "#servicios" },
+      { label: "Mantenimiento", href: "#servicios" },
     ],
   },
   {
     title: "Compañía",
-    links: ["Nosotros", "Proyectos", "Clientes", "Certificaciones", "Aviso de privacidad"],
+    links: [
+      { label: "Nosotros", href: "#nosotros" },
+      { label: "Proyectos", href: "#proyectos" },
+      { label: "Proceso", href: "#proceso" },
+      { label: "Certificaciones", href: "#nosotros" },
+      { label: "Aviso de privacidad", href: "#contacto" },
+    ],
   },
 ];
 
@@ -103,12 +110,12 @@ export function SiteFooter() {
             </p>
             <ul className="mt-5 flex flex-col gap-3">
               {col.links.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <Link
-                    href="#contacto"
+                    href={l.href}
                     className="group inline-flex items-center gap-1.5 text-sm text-foreground/80 transition-colors hover:text-foreground"
                   >
-                    {l}
+                    {l.label}
                     <ArrowUpRight className="size-3.5 opacity-0 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </Link>
                 </li>
